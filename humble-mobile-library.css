@@ -1,21 +1,25 @@
-#switch-platform > option[value="all"] {
+#switch-platform > option[value=all] {
     content: "All platforms"!important
 }
 
 * {
     max-height: 100vh!important;
-    max-width: 100vw!important;
+    max-width: 100vw!important
 }
 
 .banner.small-banner,
 .filter > .switch-platform > label,
+.js-download-section h3,
+.js-download-section hr,
 .navbar::before {
     display: none
 }
 
+.column,
 .details-column {
     min-height: unset!important;
-    width: 100%!important
+    width: 100%!important;
+    flex-grow: unset!important
 }
 
 .details-view {
@@ -32,11 +36,6 @@
     margin-top: 0!important
 }
 
-.details-view .select-holder {
-    position: absolute!important;
-    top: 10px !important;
-}
-
 .details-column .scroll-follower {
     height: 25vh
 }
@@ -46,17 +45,26 @@
 }
 
 .details-heading .text-holder {
-    width: calc(100vw - 280px) !important;
-    margin-top: 0px !important;
+    width: 50%!important;
+    margin-top: 0!important;
+    margin-left: 0!important
 }
 
 .details-heading .text-holder h2 {
-    white-space: unset !important;
+    white-space: unset!important;
     height: auto;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    overflow: hidden;
+    overflow: hidden
+}
+
+.details-heading a {
+    display: block!important
+}
+
+div.select-holder {
+    order: -3;
 }
 
 .download-list {
@@ -64,23 +72,24 @@
     width: 100vw!important
 }
 
-.download-list .custom-select .selected,
-.download-list .custom-select .choice {
-    height: 40px
-}
-
-.download-list .custom-select,
-.choices-holder .choices {
-    font-size: 24px;
-    width: 150px !important
-}
-
 .download-section .download-button {
-    font-size: 24px;
+    font-size: 24px
 }
 
 .details-column {
     order: 0
+}
+
+div.custom-select {
+    height: 12% !important;
+}
+
+div.custom-select .selected {
+    height: 100%;
+}
+
+div.custom-select:not(.expanded) .choices-holder {
+    display: none;
 }
 
 .details-column .details-holder {
@@ -88,8 +97,8 @@
     padding-top: 5px!important
 }
 
-.scrollbar-hider,
-.hb-search {
+.hb-search,
+.scrollbar-hider {
     order: 1
 }
 
@@ -98,46 +107,38 @@
     width: -moz-available!important
 }
 
-.hb-search,
-i.clear-search {
-    font-size: 40px!important;
-    margin: 4px;
-    position: unset!important;
-    z-index: 99
-}
-
 .header {
     margin-bottom: 10px;
     padding: 5px
-}
-
-.header .container .search {
-    display: flex!important;
-    text-align: left!important
 }
 
 .switch-platform {
     margin-right: 5px
 }
 
-.switch-platform,
-.header .container .search {
+.header .container .search,
+.switch-platform {
     align-self: center;
-    top: 0px !important
+    top: 0!important;
 }
 
+.hb.hb-search-fa,
 .header .container h1,
 .navbar-item.logo-navbar-item,
-.hb.hb-search-fa {
+label[for=download-method],
+label[for=sort-order] {
     display: none!important
 }
 
+.js-search,
+.search,
 .header .container,
 .header .container .sort select,
 .header .container .switch-download-method select,
 .header .container .switch-platform select,
-.header .container .switch-sort-order select {
-    height: 50px
+.header .container .switch-sort-order select,
+div.filter {
+    width: -moz-available;
 }
 
 .inner-main-wrapper {
@@ -151,33 +152,36 @@ i.clear-search {
 }
 
 .mm-wrapper {
-    overflow-y: hidden
+    overflow-y: hidden;
+    min-width: unset!important
 }
 
 .navbar {
     box-shadow: unset;
     height: 56px!important;
-    width: 50px
+    width: 50px;
+    background-color: black;
 }
 
 .navigation-container-v2 {
     height: 0
 }
 
-.subproducts-holder,
+.selector-content,
 .subproduct-selector,
-.selector-content {
+.subproducts-holder {
     width: unset!important
 }
 
 .tabbar {
     align-content: start!important;
     justify-content: start!important;
-    width: 100vw
+    width: 100vw;
+    overflow: scroll!important
 }
 
 .tabbar::before {
-    content: ''!important;
+    content: ""!important;
     min-width: 50px!important
 }
 
@@ -195,17 +199,93 @@ html body hr {
     margin: 0!important
 }
 
-i.clear-search {
-    margin-left: -44px;
-    order: 3
+.switch-download-method,
+.switch-sort-order {
+    width: 50vw!important;
+    display: unset!important
 }
 
-input.js-search {
-    height: 43px;
-    margin-left: -47px!important;
-    margin-right: 5px;
-    order: 2;
-    padding-left: 50px!important;
-    text-align: left!important;
-    width: -moz-available!important
+.switch-sort-order {
+    margin-right: 2%
+}
+
+.download-list .custom-select .selected,
+.js-choices {
+    font-size: 18px!important;
+    padding: 2px!important
+}
+
+.js-download-button {
+    width: unset!important;
+    font-size: 18px!important
+}
+
+.hb-caret-down {
+    display: none!important
+}
+
+.js-choices-holder {
+    margin-left: 6px!important;
+    padding-right: 6px!important
+}
+
+.hb-search::before,
+.js-clear-search::before {
+    font-size: 24px;
+    vertical-align: top;
+}
+
+.search i.hb {
+    margin-top: 2px;
+    align-self: start !important;
+    position: unset !important;
+}
+
+i.hb-search {
+    order: 0 !important;
+}
+
+i.clear-search {
+    order: 2 !important;
+}
+
+
+div.subproduct-selector,
+div.selector-content,
+div.selector-content .icon {
+    height: 7vw;
+}
+
+.selector-content .text-holder p {
+    display: none;
+}
+
+.text-holder {
+    margin: 1vw;
+}
+
+#search.js-search {
+    margin-left: 1% !important;
+    margin-right: 1% !important;
+    width: -moz-available;
+    height: 100% !important;
+    padding: 0;
+    padding-left: 6px;
+    padding-right: 6px;
+    margin-top: -2px;
+    order: 1 !important;
+}
+
+div.switch-platform,
+select#switch-platform {
+    width: 30vw !important;
+}
+
+div.search {
+    height: 100% !important;
+    display: flex !important;
+}
+
+div.js-platform-select-holder {
+    position: unset !important;
 }
